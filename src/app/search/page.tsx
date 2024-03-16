@@ -1,6 +1,6 @@
-import { db } from '@/db'
-import { Product, productsTable } from '@/db/schema'
-import { vectorize } from '@/lib/vectorize'
+import { db } from &apos;@/db&apos;
+import { Product, productsTable } from &apos;@/db/schema&apos;
+import { vectorize } from &apos;@/lib/vectorize&apos;
 import { Index } from '@upstash/vector'
 import { sql } from 'drizzle-orm'
 import { X } from 'lucide-react'
@@ -72,37 +72,37 @@ const Page = async ({ searchParams }: PageProps) => {
         <X className='mx-auto h-8 w-8 text-gray-400' />
         <h3 className='mt-2 text-sm font-semibold text-gray-900'>No results</h3>
         <p className='mt-1 text-sm mx-auto max-w-prose text-gray-500'>
-          Sorry, we couldn't find any matches for
-          <span className='text-green-600 font-medium'>{query}</span>.
+          Sorry, we couldn&apos;t find any matches for
+          <span className=&apos;text-green-600 font-medium&apos;>{query}</span>.
         </p>
       </div>
     )
   }
 
   return (
-    <ul className='py-4 divide-y divide-zinc-100 bg-white shadow-md rounded-b-md'>
+    <ul className=&apos;py-4 divide-y divide-zinc-100 bg-white shadow-md rounded-b-md&apos;>
       {products.slice(0, 3).map((product) => (
         <Link key={product.id} href={`/products/${product.id}`}>
-          <li className='mx-auto py-4 px-8 flex space-x-4'>
-            <div className='relative flex items-center bg-zinc-100 rounded-lg h-40 w-40'>
+          <li className=&apos;mx-auto py-4 px-8 flex space-x-4&apos;>
+            <div className=&apos;relative flex items-center bg-zinc-100 rounded-lg h-40 w-40&apos;>
               <Image
-                loading='eager'
+                loading=&apos;eager&apos;
                 fill
-                alt='product-image'
+                alt=&apos;product-image&apos;
                 src={`/${product.imageId}`}
               />
             </div>
 
-            <div className='w-full flex-1 space-y-2 py-1'>
-              <h1 className='text-lg font-medium text-gray-900'>
+            <div className=&apos;w-full flex-1 space-y-2 py-1&apos;>
+              <h1 className=&apos;text-lg font-medium text-gray-900&apos;>
                 {product.name}
               </h1>
 
-              <p className='prose prose-sm text-gray-500 line-clamp-3'>
+              <p className=&apos;prose prose-sm text-gray-500 line-clamp-3&apos;>
                 {product.description}
               </p>
 
-              <p className='text-base font-medium text-gray-900'>
+              <p className=&apos;text-base font-medium text-gray-900&apos;>
                 ${product.price.toFixed(2)}
               </p>
             </div>
